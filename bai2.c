@@ -12,12 +12,26 @@
  
 #include <stdio.h>
 
-//Tạo hàm 
-
-int main() {
-
-    // //Gọi hàm trong hàm main 
-    
-    return 0;
+// Tạo hàm kiểm tra năm nhuận
+int laNamNhuan(int nam){
+    if(nam % 400 == 0 || (nam % 4 == 0 && nam % 100 != 0)){
+        return 1;   // là năm nhuận
+    }
+    return 0;       // không phải năm nhuận
 }
 
+int main() {
+    int nam;
+
+    printf("Nhap nam: ");
+    scanf("%d", &nam);
+
+    // Gọi hàm
+    if(laNamNhuan(nam)){
+        printf("%d la nam nhuan", nam);
+    }else{
+        printf("%d khong phai nam nhuan", nam);
+    }
+
+    return 0;
+}

@@ -4,20 +4,24 @@
  * Lớp:       [ĐIỀN LỚP TẠI ĐÂY]
  *****************************************************************************/
 
-//  BÀI 3: XÂY DỰNG HÀM HOÁN VỊ 
-//  Input: Nhập vào từ bàn phím 2 giá trị a,b 
-//  Output: hoán vị 2 giá trị của a và b 
-//  Hướng dẫn thực hiện: 
-//  Xây dựng hàm hoán vị sử dụng con trỏ và gọi hàm theo tham chiếu 
-
 #include <stdio.h>
 
-//Tạo hàm 
-
-int main() {
-
-    // //Gọi hàm trong hàm main 
-    
-    return 0;
+// hàm hoán vị
+void hoanVi(int *a, int *b){
+    int t = *a;
+    *a = *b;
+    *b = t;
 }
 
+int main(){
+    int a, b;
+
+    printf("Nhap a b: ");
+    scanf("%d %d", &a, &b);
+
+    hoanVi(&a, &b);   // gọi hàm
+
+    printf("a = %d, b = %d", a, b);
+
+    return 0;
+}
